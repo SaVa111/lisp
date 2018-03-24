@@ -26,3 +26,10 @@
     (if (atom (car L1)) (car L1)
         (first-atom (car L1)))
 )
+
+;21. Определите функцию, удаляющую из списка первое вхождение данного элемента на верхнем уровне
+(defun del(L to-del)
+    (if (equal (car L) to-del)
+        (cdr L)
+        (cons (car L) (del (cdr L) to-del)))
+)
