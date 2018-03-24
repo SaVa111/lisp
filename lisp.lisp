@@ -34,10 +34,11 @@
         (cons (car L) (del (cdr L) to-del)))
 )
 
+;25. Определите функцию, удаляющую из списка каждый четный элемент.
 (defun del-evens(L)
     (cond ((null L) NIL)
         ((atom (car L))
-          (if (rational (car L))
+          (if (numberp (car L))
               (if (= 0 (mod (car L) 2))
                   (del-evens (cdr L))
                   (cons (car L) (del-evens (cdr L))))
