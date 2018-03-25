@@ -65,10 +65,10 @@
 (setf (get `stambul `y) 2)
 
 (defun distance (A B)
-    (sqrt (+
-    (* (- (get A `x) (get B `x)) (- (get A `x) (get B `x)))
-    (* (- (get A `y) (get B `y)) (- (get A `y) (get B `y)))
-    ))
+    ((lambda (x1 y1 x2 y2) (sqrt (+
+    (* (- x1 x2) (- x1 x2))
+    (* (- y1 y2) (- y1 y2))
+    ))) (get A `x) (get A `y) (get B `x) (get B `y))
 )
 
 ;(print (distance `paris `stambul))
