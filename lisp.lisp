@@ -72,3 +72,14 @@
 )
 
 ;(print (distance `paris `stambul))
+;Вспомогательная функция определяющая входит ли элемент в список
+(defun find-in-list(L E)
+    (cond  ((null L) nil)
+           ((equal (car L) E) T)
+           (T (find-in-list (cdr L) E))
+           )
+)
+;48. Напишите предикат (ИМЕЕТ-СВОЙСТВО символ свойство), который проверяет, обладает ли символ данным свойством.
+(defun has-property(Elem Param)
+    (find-in-list (del-even (cons 0 (symbol-plist Elem))) Param)
+)
