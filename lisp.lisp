@@ -56,3 +56,19 @@
     )
 )
 ;(print (max-sheet `(3 (4 nil nil) (5 (3 nil nil) (2 nil nil)) ) ))
+
+(setf (get `paris `x) 1)
+(setf (get `paris `y) 1)
+(setf (get `amsterdam `x) 5)
+(setf (get `amsterdam `y) 3)
+(setf (get `stambul `x) 1)
+(setf (get `stambul `y) 2)
+
+(defun distance (A B)
+    (sqrt (+
+    (* (- (get A `x) (get B `x)) (- (get A `x) (get B `x)))
+    (* (- (get A `y) (get B `y)) (- (get A `y) (get B `y)))
+    ))
+)
+
+;(print (distance `paris `stambul))
