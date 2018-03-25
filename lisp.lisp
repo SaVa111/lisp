@@ -47,3 +47,11 @@
           (T (cons (del-evens (car L)) (del-evens (cdr L))))
     )
 )
+
+;42. Определите функцию, находящую максимальное из значений, находящихся в вершинах дерева.
+(defun max-sheet (L)
+    (if (and (null (cadr L)) (null (caddr L)))
+        (car L)
+        (max (max-sheet (cadr L)) (max-sheet (caddr L)))
+    )
+)
