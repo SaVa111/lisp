@@ -55,3 +55,4 @@
         (max (max-sheet (cadr L)) (max-sheet (caddr L)))
     )
 )
+;(print (max-sheet `(3 (4 nil nil) (5 (3 nil nil) (2 nil nil)) ) ))
