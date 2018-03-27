@@ -35,9 +35,13 @@
 
 ;21. Определите функцию, удаляющую из списка первое вхождение данного элемента на верхнем уровне
 (defun del(L to-del)
-    (if (equal (car L) to-del)
-        (cdr L)
-        (cons (car L) (del (cdr L) to-del)))
+    (if (null L)
+    nil
+    ((lambda (Head Tail)
+        (if (equal Head to-del)
+            Tail
+            (cons Head (del Tail to-del)))
+            ) (car L) (cdr L)))
 )
 ;(print (del `(1 2 (3 3) 3) 3))
 
