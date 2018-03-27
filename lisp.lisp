@@ -60,7 +60,7 @@
 (defun max-sheet (L)
     (if (and (null (cadr L)) (null (caddr L)))
         (car L)
-        (max (max-sheet (cadr L)) (max-sheet (caddr L)))
+        ((lambda (A B) (if (> A B) A B)) (max-sheet (cadr L)) (max-sheet (caddr L)))
     )
 )
 ;(print (max-sheet `(3 (4 nil nil) (5 (3 nil nil) (2 nil nil)) ) ))
