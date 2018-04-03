@@ -137,4 +137,6 @@
                    (if (funcall fn X) nil (list X))
            ) L)
 )
-(print (Del-If (lambda (x)(< x 5)) `(1 5 1 5 2 2)))
+;(print (Del-If (lambda (x)(< x 5)) `(1 5 1 5 2 2)))
+;(print (Del-If (lambda (x)(= x 5)) `(1 5 5 5 5 2)))
+;(print (Del-If (lambda (x)(= 0 (mod x 2))) `(1 2 3 5 4 1 5 2 2)))
