@@ -104,7 +104,7 @@
 ;Определите функицонал (MAPLIST fn список) для одного списочного аргумента.
 (defun MAPL1 (fn L)
     (if (null L) nil
-        (cons (funcall fn (car L)) (MAPL1 fn (cdr L))))
+        (cons (funcall fn L) (MAPL1 fn (cdr L))))
 )
 
 ;(MAPL1 `print `(1 2 3))
