@@ -96,7 +96,6 @@
 (defun has-property(Elem Param)
     (find-in-list (del-even (cons 0 (symbol-plist Elem))) Param)
 )
-
 ;(print (has-property `paris `x))
 ;(print (has-property `paris `z))
 ;(print (has-property `paris `r))
@@ -127,7 +126,6 @@
 (defun TEach (fn L)
     (All-t (MAPCA fn L))
 )
-
 ;(print (TEach (lambda (A)(< A 5)) `(1 2 3 4)))
 
 ;6. Определите фильтр (УДАЛйЬ-ЕСЛИ пред список), удаляющий из списка список
