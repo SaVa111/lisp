@@ -103,12 +103,24 @@
 
 ;Определите функицонал (MAPLIST fn список) для одного списочного аргумента.
 (defun MAPLI (fn L)
-    (if (null L) nil
+    (if (null (cdr L)) (list (funcall fn L))
         (cons (funcall fn L) (MAPLI fn (cdr L))))
 )
 ;(MAPLI `print `(1 2 3))
 (defun MAPCA (fn L)
-    (if (null L) nil
+    (if (null (cdr L)) (list(funcall fn (car L)))
         (cons (funcall fn (car L)) (MAPCA fn (cdr L))))
 )
 ;(MAPCA `print `(1 2 3))
+
+(defun All-t (L)
+    (if (null (cdr L)) (car L)
+        (and (car L) (All-t (cdr L)))
+    )
+)
+
+(defun TEach (fn L)
+    (All-t (MAPCA fn L))
+)
+
+;(print (TEach (lambda (A)(< A 5)) `(1 2 3 4)))
