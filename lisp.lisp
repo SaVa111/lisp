@@ -102,9 +102,13 @@
 ;(print (has-property `paris `r))
 
 ;Определите функицонал (MAPLIST fn список) для одного списочного аргумента.
-(defun MAPL1 (fn L)
+(defun MAPLI (fn L)
     (if (null L) nil
-        (cons (funcall fn L) (MAPL1 fn (cdr L))))
+        (cons (funcall fn L) (MAPLI fn (cdr L))))
 )
-
-;(MAPL1 `print `(1 2 3))
+;(MAPLI `print `(1 2 3))
+(defun MAPCA (fn L)
+    (if (null L) nil
+        (cons (funcall fn (car L)) (MAPCA fn (cdr L))))
+)
+;(MAPCA `print `(1 2 3))
