@@ -62,10 +62,12 @@
 
 ;42. Определите функцию, находящую максимальное из значений, находящихся в вершинах дерева.
 (defun max-sheet (L)
-    (if (and (null (cadr L)) (null (caddr L)))
-        (car L)
-        ((lambda (A B) (if (> A B) A B)) (max-sheet (cadr L)) (max-sheet (caddr L)))
-    )
+    ((lambda (left right)
+             (if (and (null left) (null right))
+                 (car L)
+                 (max (max-sheet left) (max-sheet right))
+             )
+     ) (cadr L) (caddr L))
 )
 ;(print (max-sheet `(3 (4 nil nil) (5 (3 nil nil) (2 nil nil)) ) ))
 
