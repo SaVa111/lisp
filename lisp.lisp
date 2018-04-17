@@ -141,6 +141,7 @@
 ;(print (Del-If (lambda (x)(= x 5)) `(1 5 5 5 5 2)))
 ;(print (Del-If (lambda (x)(= 0 (mod x 2))) `(1 2 3 5 4 1 5 2 2)))
 
+;9. Напишите генератор порождения чисел Фибоначчи:
 (defun fibgen ()
     (let ((a -1) (b 1))
         (lambda ()
@@ -150,7 +151,7 @@
         )
     )
 )
-
+;8. Напишите генератор натуральных чисел
 (defun make-counter ()
     (let ( (x -1) )
         (lambda () (setq x (+ x 1)))
@@ -166,6 +167,7 @@
 (print (funcall g1))
 (print (funcall g1))
 
+;10. Напишите генератор, порождающий последовательность (A), (B A), (A B A)df
 (defun abagen ()
     (let ( (l nil) )
         (lambda ()
@@ -183,6 +185,7 @@
 (print (funcall g1))
 (print (funcall g1))
 
+;3. Определите лисповскую форму (IF условие p q) в виде макроса.
 (defmacro if2 (condition p q)
     (list `if condition p q)
 )
@@ -192,7 +195,7 @@
 )
 
 (print (if3 (> 5 1) 1 2))
-
+;4. Определите в виде макроса форму (FIF тест отр нуль полож).
 (defmacro fif (state n z p)
     (list `cond (list (< state 0) n)
                 (list (> state 0) p)
