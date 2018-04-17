@@ -166,6 +166,23 @@
 (print (funcall g1))
 (print (funcall g1))
 
+(defun abagen ()
+    (let ( (l nil) )
+        (lambda ()
+                (setq l 
+                      (cond
+                          ((equal `a (car l)) (cons `b l))
+                          (t (cons `a l))
+                      )
+                )
+        )
+    )
+)
+(setq g1 (abagen))
+(print (funcall g1))
+(print (funcall g1))
+(print (funcall g1))
+
 (defmacro if2 (condition p q)
     (list `if condition p q)
 )
@@ -184,3 +201,5 @@
 )
 
 (print (fif -4 -1 0 1))
+
+
