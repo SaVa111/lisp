@@ -165,3 +165,22 @@
 (print (funcall g1))
 (print (funcall g1))
 (print (funcall g1))
+
+(defmacro if2 (condition p q)
+    (list `if condition p q)
+)
+
+(defmacro if3 (condition p q)
+    (list `cond (list condition p) (list t q))
+)
+
+(print (if3 (> 5 1) 1 2))
+
+(defmacro fif (state n z p)
+    (list `cond (list (< state 0) n)
+                (list (> state 0) p)
+                (list t z)
+    )
+)
+
+(print (fif -4 -1 0 1))
